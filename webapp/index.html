@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Membership Dataset Viewer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>Membership Dataset Viewer</h1>
+        <p>Drop in a CSV and choose which columns to show.</p>
+      </header>
+
+      <div id="drop-zone">
+        <p><strong>Drag & drop a CSV file here</strong> or click to choose one.</p>
+        <input id="file-input" type="file" accept=".csv,text/csv" hidden />
+      </div>
+
+      <div id="error-box" hidden></div>
+
+      <section id="workspace" hidden>
+        <div class="workspace-header">
+          <h2 id="file-name"></h2>
+          <span id="row-count"></span>
+        </div>
+
+        <div id="column-picker">
+          <div class="column-picker-header">
+            <h3>Columns</h3>
+            <div>
+              <button id="select-all" class="text-button" type="button">Select all</button>
+              <button id="select-none" class="text-button" type="button">Select none</button>
+            </div>
+          </div>
+          <div id="column-list"></div>
+        </div>
+
+        <div id="table-container">
+          <table>
+            <thead id="table-head"></thead>
+            <tbody id="table-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="csv-utils.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

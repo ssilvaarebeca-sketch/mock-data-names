@@ -21,3 +21,21 @@ No third-party dependencies — everything used is in the Python standard librar
 ```bash
 python3 -m unittest discover
 ```
+
+## Web app
+
+[`webapp/`](webapp/) is a static, client-side viewer for membership-style CSV files: drag and drop (or pick) a file, then choose which columns to display in the table. Everything runs in the browser — no backend, no build step, no third-party libraries.
+
+Open [`webapp/index.html`](webapp/index.html) directly in a browser, or serve the folder:
+
+```bash
+python3 -m http.server --directory webapp
+```
+
+Then visit `http://localhost:8000`.
+
+### Web app tests
+
+```bash
+node webapp/csv-utils.test.js
+```
